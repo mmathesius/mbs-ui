@@ -15,7 +15,7 @@
     <li [ngClass]="{'build-tracker-step-done': module.state > 1, 'build-tracker-step-active': module.state == 1}">Wait</li>
     <li [ngClass]="{'build-tracker-step-done': module.state > 2, 'build-tracker-step-active': module.state == 2}">Build</li>
     <li [ngClass]="{
-        'build-tracker-step-done': module.state > 3 || module.scratch,
+        'build-tracker-step-done': module.state > 3 || (module.state == 3 && module.scratch),
         'build-tracker-step-active': module.state == 3 && !module.scratch
     }">Done</li>
     <li [ngClass]="{'build-tracker-step-done': module.state >= 4}">Ready</li>
